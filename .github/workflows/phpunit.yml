@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: 
       - stage
+  push:
+    branches:
+      - stage
 
 jobs:
   main:
