@@ -58,11 +58,23 @@ class Database extends \CodeIgniter\Database\Config
 	 * @var array
 	 */
 	public $tests = [
-		'hostname' => '',
-		'username' => '',
-		'password' => '',
-		'database' => '',
-		'DBDriver' => '',
+	    'username' => '',
+	    'password' => '',
+	    'database' => './application/db/database.sqlite',
+	    'dbdriver' => 'sqlite3',
+	    'dbprefix' => '',
+	    'pconnect' => FALSE,
+	    'db_debug' => (ENVIRONMENT !== 'production'),
+	    'cache_on' => FALSE,
+	    'cachedir' => '',
+	    'char_set' => 'utf8',
+	    'dbcollat' => 'utf8_general_ci',
+	    'swap_pre' => '',
+	    'encrypt' => FALSE,
+	    'compress' => FALSE,
+	    'stricton' => FALSE,
+	    'failover' => array(),
+	    'save_queries' => TRUE
 	];
 
 	//--------------------------------------------------------------------
