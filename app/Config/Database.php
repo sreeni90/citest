@@ -59,7 +59,7 @@ class Database extends \CodeIgniter\Database\Config
 	 */
 	public $tests = [
 	    'username' => 'testuser',
-	    'password' => 'root',
+	    'password' => 'Fz(}"TsZw$XQWH33',
 	    'database' => 'wise1',
 	    'dbdriver' => 'MySQLi',
 	    'dbprefix' => 'tests_',
