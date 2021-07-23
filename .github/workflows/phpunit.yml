@@ -21,7 +21,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     services:
       mysql:
-          image: mysql:8.0.4
+          image: mysql:8.0
 
           env:
             MYSQL_DATABASE: wise1
