@@ -30,7 +30,6 @@ class Database extends \CodeIgniter\Database\Config
 	 * @var array
 	 */
 	public $default = [
-		'DSN'      => '',
 		'hostname' => 'localhost',
 		'username' => 'testuser',
 	    'password' => 'Fz(}"TsZw$XQWH33',
@@ -48,7 +47,6 @@ class Database extends \CodeIgniter\Database\Config
 	    'compress' => FALSE,
 	    'stricton' => FALSE,
 	    'failover' => array(),
-	    'save_queries' => TRUE,
 		'port'     => 3306,
 	];
 
