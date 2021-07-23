@@ -30,9 +30,10 @@ class Database extends \CodeIgniter\Database\Config
 	 * @var array
 	 */
 	public $default = [
+		'DSN'	=>'',
 		'hostname' => 'localhost',
 		'username' => 'testuser',
-	    'password' => 'Fz(}"TsZw$XQWH33',
+	    'password' => 'Fz(}TsZw$XQWH33',
 	    'database' => 'wise1',
 	    'dbdriver' => 'MySQLi',
 	    'dbprefix' => 'tests_',
@@ -59,7 +60,7 @@ class Database extends \CodeIgniter\Database\Config
 	public $tests = [
 		'hostname' => 'localhost',
 	    'username' => 'testuser',
-	    'password' => 'Fz(}"TsZw$XQWH33',
+	    'password' => 'Fz(}TsZw$XQWH33',
 	    'database' => 'wise1',
 	    'dbdriver' => 'MySQLi',
 	    'dbprefix' => 'tests_',
