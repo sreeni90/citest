@@ -36,7 +36,7 @@ class Database extends \CodeIgniter\Database\Config
 	    'password' => 'Fz(}TsZw$XQWH33',
 	    'database' => 'wise1',
 	    'DBDriver' => 'MySQLi',
-	    'DBPrefix' => 'tests_',
+	    'DBPrefix' => '',
 	    'pconnect' => FALSE,
 	    'db_debug' => (ENVIRONMENT !== 'production'),
 	    'cache_on' => FALSE,
@@ -59,12 +59,12 @@ class Database extends \CodeIgniter\Database\Config
 	 * @var array
 	 */
 	public $tests = [
-		'hostname' => '127.0.0.1',
+		'hostname' => 'localhost',
 	    'username' => 'testuser',
 	    'password' => 'Fz(}TsZw$XQWH33',
 	    'database' => 'wise1',
 	    'DBDriver' => 'MySQLi',
-	    'DBPrefix' => 'tests_',
+	    'DBPrefix' => '',
 	    'pconnect' => FALSE,
 	    'DBDebug' => (ENVIRONMENT !== 'production'),
 	    'cache_on' => FALSE,
