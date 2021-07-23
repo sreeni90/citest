@@ -55,21 +55,21 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
           restore-keys: ${{ runner.os }}-composer-
 
-      - name: Install dependencies
-        run: composer install --no-progress --no-suggest --no-interaction --prefer-dist --optimize-autoloader
+      - name: Install dependencies and create .env file and add db parameters
+        run: composer install --no-progress --no-suggest --no-interaction --prefer-dist --optimize-autoloader \
+              sudo cp env .env && sudo chmod 777 .env && sudo echo "" >> .env \
+              sudo echo "CI_ENVIRONMENT = development" >> .env  \
+              sudo echo "" >> .env \ 
+              sudo echo "database.default.hostname = 127.0.0.1" >> .env \
+              sudo echo "database.default.database = wise1" >> .env \
+              sudo echo "database.default.username = testuser" >> .env  \
+              sudo echo "database.default.password = Fz(}"TsZw$XQWH33" >> .env  \
+              sudo echo "database.default.DBDriver = MySQLi" >> .env
+
+      - name: Test with phpunit
+        run: vendor/bin/phpunit --coverage-text
+
         # To prevent rate limiting you may need to supply an OAuth token in Settings > Secrets
         # env:
           # https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens
           # COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-      - name: Create .env file and add db parameters
-        run:  sudo cp env .env && sudo chmod 777 .env && sudo echo "" >> .env
-        run:  sudo echo "CI_ENVIRONMENT = development" >> .env
-        run:  sudo echo "" >> .env
-        run:  sudo echo "database.default.hostname = 127.0.0.1" >> .env
-        run:  sudo echo "database.default.database = wise1" >> .env
-        run:  sudo echo "database.default.username = testuser" >> .env
-        run:  sudo echo "database.default.password = Fz(}"TsZw$XQWH33" >> .env
-        run:  sudo echo "database.default.DBDriver = MySQLi" >> .env
-
-      - name: Test with phpunit
-        run: vendor/bin/phpunit --coverage-text
