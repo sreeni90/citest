@@ -60,7 +60,7 @@ jobs:
       - name: Database config details
         run: sudo cp env .env && sudo chmod 777 .env && sudo echo "" >> .env && sudo echo "CI_ENVIRONMENT = development" >> .env && sudo echo "" >> .env &&  sudo echo "database.default.hostname = 127.0.0.1" >> .env && sudo echo "database.default.database = wise1" >> .env 
       - name: mysql password
-        run: sudo echo "database.default.username = testuser" >> .env &&  sudo echo "database.default.password = Fz(}"TsZw$XQWH33" >> .env && sudo echo "database.default.DBDriver = MySQLi" >> .env
+        run: sudo echo "database.default.username = testuser" >> .env &&  sudo echo 'database.default.password = Fz(}"TsZw$XQWH33' >> .env && sudo echo "database.default.DBDriver = MySQLi" >> .env
 
       - name: Test with phpunit
         run: vendor/bin/phpunit --coverage-text
