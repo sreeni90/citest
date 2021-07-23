@@ -35,14 +35,14 @@ class Database extends \CodeIgniter\Database\Config
 		'username' => 'testuser',
 	    'password' => 'Fz(}TsZw$XQWH33',
 	    'database' => 'wise1',
-	    'dbdriver' => 'MySQLi',
-	    'dbprefix' => 'tests_',
+	    'DBDriver' => 'MySQLi',
+	    'DBPrefix' => 'tests_',
 	    'pconnect' => FALSE,
 	    'db_debug' => (ENVIRONMENT !== 'production'),
 	    'cache_on' => FALSE,
 	    'cachedir' => '',
 	    'char_set' => 'utf8',
-	    'dbcollat' => 'utf8_general_ci',
+	    'DBCollat' => 'utf8_general_ci',
 	    'swap_pre' => '',
 	    'encrypt' => FALSE,
 	    'compress' => FALSE,
@@ -51,6 +51,7 @@ class Database extends \CodeIgniter\Database\Config
 		'port'     => 3306,
 	];
 
+	
 	/**
 	 * This database connection is used when
 	 * running PHPUnit database tests.
@@ -58,18 +59,18 @@ class Database extends \CodeIgniter\Database\Config
 	 * @var array
 	 */
 	public $tests = [
-		'hostname' => 'localhost',
+		'hostname' => '127.0.0.1',
 	    'username' => 'testuser',
 	    'password' => 'Fz(}TsZw$XQWH33',
 	    'database' => 'wise1',
-	    'dbdriver' => 'MySQLi',
-	    'dbprefix' => 'tests_',
+	    'DBDriver' => 'MySQLi',
+	    'DBPrefix' => 'tests_',
 	    'pconnect' => FALSE,
-	    'db_debug' => (ENVIRONMENT !== 'production'),
+	    'DBDebug' => (ENVIRONMENT !== 'production'),
 	    'cache_on' => FALSE,
 	    'cachedir' => '',
 	    'char_set' => 'utf8',
-	    'dbcollat' => 'utf8_general_ci',
+	    'DBCollat' => 'utf8_general_ci',
 	    'swap_pre' => '',
 	    'encrypt' => FALSE,
 	    'compress' => FALSE,
