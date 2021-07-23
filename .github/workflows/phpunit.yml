@@ -19,6 +19,17 @@ jobs:
     runs-on: ubuntu-latest
 
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    services:
+      mysql:
+      image: mysql:8.0.4
+      env:
+        MYSQL_DATABASE: wise1
+        MYSQL_USER: root
+        MYSQL_PASSWORD: root
+        MYSQL_ROOT_PASSWORD: rootpassword
+      ports:
+        - 33306:3306
+      options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
       - name: Checkout

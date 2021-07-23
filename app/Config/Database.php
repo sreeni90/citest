@@ -58,11 +58,11 @@ class Database extends \CodeIgniter\Database\Config
 	 * @var array
 	 */
 	public $tests = [
-	    'username' => '',
-	    'password' => '',
-	    'database' => './application/db/database.sqlite',
-	    'dbdriver' => 'sqlite3',
-	    'dbprefix' => '',
+	    'username' => 'testuser',
+	    'password' => 'root',
+	    'database' => 'wise1',
+	    'dbdriver' => 'MySQLi',
+	    'dbprefix' => 'tests_',
 	    'pconnect' => FALSE,
 	    'db_debug' => (ENVIRONMENT !== 'production'),
 	    'cache_on' => FALSE,
