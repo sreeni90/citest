@@ -57,6 +57,7 @@ class Database extends \CodeIgniter\Database\Config
 	 * @var array
 	 */
 	public $tests = [
+		'hostname' => 'localhost',
 	    'username' => 'testuser',
 	    'password' => 'Fz(}"TsZw$XQWH33',
 	    'database' => 'wise1',
