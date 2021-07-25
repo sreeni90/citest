@@ -62,7 +62,7 @@ jobs:
       - name: enable php modules
         run: sudo phpenmod mysqlnd && sudo phpenmod sqlite3 && sudo phpenmod mbstring
       - name: Migrate Database and Seed Data
-        run: php spark migare && php spark db:seed PostSeeder
+        run: php spark migrate && php spark db:seed PostSeeder
       - name: Test with phpunit
         run: vendor/bin/phpunit --coverage-text
       
