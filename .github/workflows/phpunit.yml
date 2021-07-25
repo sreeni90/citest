@@ -61,8 +61,11 @@ jobs:
         run: sudo cp env .env && sudo chmod 777 .env && sudo echo "" >> .env && sudo echo "CI_ENVIRONMENT = testing" >> .env 
       - name: enable php modules
         run: sudo phpenmod mysqlnd && sudo phpenmod sqlite3 && sudo phpenmod mbstring
+      - name: Migrate Database and Seed Data
+        run: composer require --dev fakerphp/faker && php spark migare && php spark db:seed PostSeeder
       - name: Test with phpunit
         run: vendor/bin/phpunit --coverage-text
+      
 
         # To prevent rate limiting you may need to supply an OAuth token in Settings > Secrets
         # env:
