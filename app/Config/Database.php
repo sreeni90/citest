@@ -58,25 +58,23 @@ class Database extends \CodeIgniter\Database\Config
 	 *
 	 * @var array
 	 */
-	public $tests = [
-		'hostname' => 'localhost',
-	    'username' => 'testuser',
-	    'password' => 'Fz(}TsZw$XQWH33',
-	    'database' => 'wise1',
-	    'DBDriver' => 'MySQLi',
-	    'DBPrefix' => '',
-	    'pconnect' => FALSE,
-	    'DBDebug' => (ENVIRONMENT !== 'production'),
-	    'cache_on' => FALSE,
-	    'cachedir' => '',
-	    'char_set' => 'utf8',
-	    'DBCollat' => 'utf8_general_ci',
-	    'swap_pre' => '',
-	    'encrypt' => FALSE,
-	    'compress' => FALSE,
-	    'stricton' => FALSE,
-	    'failover' => array(),
-	    'save_queries' => TRUE,
+         public $tests = [
+		'DSN'      => '',
+		'hostname' => '127.0.0.1',
+		'username' => '',
+		'password' => '',
+		'database' => ':memory:',
+		'DBDriver' => 'SQLite3',
+		'DBPrefix' => 'db_',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
+		'pConnect' => false,
+		'DBDebug'  => (ENVIRONMENT !== 'production'),
+		'charset'  => 'utf8',
+		'DBCollat' => 'utf8_general_ci',
+		'swapPre'  => '',
+		'encrypt'  => false,
+		'compress' => false,
+		'strictOn' => false,
+		'failover' => [],
 		'port'     => 3306,
 	];
 
@@ -92,24 +90,7 @@ class Database extends \CodeIgniter\Database\Config
 		if (ENVIRONMENT === 'testing')
 		{
 			$this->defaultGroup = 'tests';
-
-			// Under Travis-CI, we can set an ENV var named 'DB_GROUP'
-			// so that we can test against multiple databases.
-			if ($group = getenv('DB'))
-			{
-				if (is_file(TESTPATH . 'travis/Database.php'))
-				{
-					require TESTPATH . 'travis/Database.php';
-
-					if (! empty($dbconfig) && array_key_exists($group, $dbconfig))
-					{
-						$this->tests = $dbconfig[$group];
-					}
-				}
-			}
 		}
 	}
-
-	//--------------------------------------------------------------------
 
 }
