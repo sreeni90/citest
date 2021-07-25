@@ -58,7 +58,7 @@ jobs:
       - name: Install dependencies and create .env file and add db parameters
         run: composer install --no-progress --no-suggest --no-interaction --prefer-dist --optimize-autoloader
       - name: Database config details
-        run: sudo cp env .env && sudo chmod 777 .env && sudo echo "" >> .env && sudo echo "CI_ENVIRONMENT = testing" >> .env 
+        run: sudo cp env .env && sudo chmod 777 .env && sudo echo "" >> .env && sudo echo "CI_ENVIRONMENT = development" >> .env 
       - name: enable php modules
         run: sudo phpenmod mysqlnd && sudo phpenmod sqlite3 && sudo phpenmod mbstring
       - name: Migrate Database and Seed Data
