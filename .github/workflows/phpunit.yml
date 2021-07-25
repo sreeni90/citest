@@ -59,10 +59,10 @@ jobs:
         run: composer install --no-progress --no-suggest --no-interaction --prefer-dist --optimize-autoloader
       - name: enable php modules
         run: sudo phpenmod mysqlnd && sudo phpenmod sqlite3 && sudo phpenmod mbstring
-      - name: Migrate Database and Seed Data
-        run: php spark migrate
       - name: Database config details
         run: sudo cp env .env && sudo chmod 777 .env && sudo echo "" >> .env && sudo echo "CI_ENVIRONMENT = testing" >> .env 
+      - name: Migrate Database and Seed Data
+        run: php spark migrate
       - name: data seed
         run: php spark db:seed PostSeeder
       - name: Test with phpunit
